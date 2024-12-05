@@ -21,6 +21,7 @@
     <div class="main">
         <main class="content">
             <p>
+                <!-- SUBSTITUIR O NOME "CLIENTE" PELO NOME DINÂMICO -->
                 <span class="cliente"><strong>Prezado Cliente</strong>,</span>
                 Agradecemos pela confiança depositada na Smile Saúde. Informamos que, a partir de
                 <strong>10/12/2024</strong>, a modalidade de pagamento por débito em conta será descontinuada.
@@ -37,7 +38,7 @@
             <h2>Realizar a alteração é simples e rápido</h2>
 
             <ol>
-                <li>Selecione a forma de pagamento desejada abaixo.</li>
+                <li>Selecione a forma de pagamento desejada.</li>
                 <li>Preencha os dados solicitados.</li>
                 <li>Clique em Realizar Solicitação.</li>
             </ol>
@@ -48,22 +49,36 @@
             <h2>Atendimento Telefônico</h2>
             <h3>Horário de atendimento: Segunda a sexta-feira, das 08h00 às 18h00</h3>
             <h4>Setor financeiro: Opção 3 ao ligar</h4>
+
             <ul>
-                <li>Alagoas: (82) 3026-8905 ou (82) 2123-7333</li>
-                <li>João Pessoa: (83) 2106-7305</li>
-                <li>Campina Grande: (83) 2101-7205</li>
-                <li>Natal: (84) 3026-8905</li>
-                <li>Distrito Federal: (61) 4007-2057</li>
-                <li>Demais localidades: (11) 2326-8905</li>
+                <li>Alagoas: <a href="tel:+558230268905">(82) 3026-8905</a> ou <a href="tel:+558221237333">(82) 2123-7333</a></li>
+                <li>João Pessoa: <a href="tel:+558321067305">(83) 2106-7305</a></li>
+                <li>Campina Grande: <a href="tel:+558321017205">(83) 2101-7205</a></li>
+                <li>Natal: <a href="tel:+558430268905">(84) 3026-8905</a></li>
+                <li>Distrito Federal: <a href="tel:+556140072057">(61) 4007-2057</a></li>
+                <li>Demais localidades: <a href="tel:+551123268905">(11) 2326-8905</a></li>
             </ul>
+
             <h2>Atendimento On-line</h2>
             <h3>Horário de atendimento: Segunda a Quinta-feira, das 08h00 às 18h00 e Sexta-feira, das 08h00 às 17h00.
             </h3>
 
             <p>
                 O chat on-line encontra-se disponível em nosso aplicativo (seção Serviços > Chat) ou via WhatsApp pelo
-                número (82) 2123-7332. Para acessar diretamente, <a href="https://wa.me/558221237333">clique aqui</a>.
+                número (82) 2123-7332. Para acessar diretamente, <a id="telefone_lis" href="https://wa.me/558221237333">clique aqui</a>.
             </p>
+
+            <div class="alteracao">
+                <h2>Selecione a Forma de Pagamento</h2>
+            </div>
+
+            <div class="dadosCartao">
+                <select name="formasPagamento" id="formasPagamento">
+                    <option value="Boleto">Selecione</option>
+                    <option value="Boleto">Boleto Bancário</option>
+                    <option value="Boleto">Cartão de Crédito</option>
+                </select>
+            </div>
         </main>
 
     </div>

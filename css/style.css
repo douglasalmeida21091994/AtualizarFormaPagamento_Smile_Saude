@@ -117,9 +117,6 @@ ul li::before {
     color: rgb(74, 63, 197);
 }
 
-.alteracao {
-    text-align: center;    
-}
 
 .dadosCartao {
     background-color: rgba(74, 63, 197, 0.493);
@@ -128,13 +125,135 @@ ul li::before {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+}
+
+.alteracao {
+    text-align: center;   
+    width: 100%; 
+}
+
+.alteracao > h2 {
+    color: #fff;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    width: 100%;
 }
 
 #formasPagamento {
-    background-color: #fff;
+    background-color: #f1f1f1;
     padding: 20px;
     width: 80%;
     border-radius: 5px;
     color: rgb(74, 63, 197);
     font-size: 1.1rem;
+    border: none;
+    margin-bottom: 15px;
+}
+
+
+.hidden {
+    display: none;
+}
+
+#cartaoFields {    
+    padding: 15px;
+}
+
+#cartaoFields > h3 {
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+#cartaoFields > label {    
+    font-size: 1.1rem;
+    display: block;
+    color: #222222d5;
+    font-weight: bold;
+    margin-bottom: 3px;
+}
+
+#nomeCartao, #numeroCartao, #codigoSeguranca, #cpfCartao {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    background-color: #f1f1f1;
+    color: #222222d5;
+    border: none;
+}
+
+.card-preview {
+    border: 2px solid #f3f3f3a6;
+    border-radius: 10px;
+    width: 500px;
+    height: 250px;
+    padding: 15px;
+    margin-top: 15px;
+    background: linear-gradient(135deg, rgb(75,63,197) 0%,rgb(79,145,214) 100%);    
+    font-family: Arial, sans-serif;
+    position: relative;   
+}
+
+.card-preview h4 {
+    text-align: center;
+    text-transform: uppercase;
+    margin: 5px 0;
+    color: #dddddd;
+    margin-bottom: 15px;
+}
+
+.card-preview p {
+    margin: 5px 0;
+    color: #dddddd;
+}
+
+.card-preview .card-number {
+    font-size: 1.2em;
+    letter-spacing: 2px;
+}
+
+.card-preview .card-holder,
+.card-preview .card-expiry {
+    font-size: 0.9em;
+}
+
+.card-preview .card-cvv {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    font-size: 0.8em;
+}
+
+.input-field {
+    margin-bottom: 10px;
+}
+
+.input-field label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.input-field input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
 }

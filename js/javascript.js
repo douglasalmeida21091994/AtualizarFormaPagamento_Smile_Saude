@@ -19,7 +19,7 @@ function updateCardFlag() {
 
     // Obtém o valor do radio button selecionado
     const bandeira = document.querySelector('input[name="bandeira"]:checked').value;
-    
+
     // Mapeamento das bandeiras para os caminhos das imagens
     const bandeiras = {
         diners: 'img/diners.png',
@@ -28,7 +28,7 @@ function updateCardFlag() {
         master: 'img/master.png',
         visa: 'img/visa.png'
     };
-    
+
     // Atualizar o src da imagem de visualização do cartão
     const cardFlagPreview = document.getElementById('cardFlagPreview');
 
@@ -38,7 +38,7 @@ function updateCardFlag() {
         cardFlagPreview.src = ''; // Caso não haja bandeira selecionada
     }
 
-     // Ajustar a largura da imagem dependendo da bandeira selecionada
+    // Ajustar a largura da imagem dependendo da bandeira selecionada
     const cardFlagPreviewImage = document.getElementById('cardFlagPreview');
 
     if (bandeira === 'hiper' || bandeira === 'master' || bandeira === 'visa') {
@@ -61,7 +61,7 @@ function formatCPF(input) {
 
     input.value = valor;
 
-    updateCardPreview();  
+    updateCardPreview();
 }
 
 function formatCardValidity(input) {
@@ -104,7 +104,7 @@ function updateCardPreview() {
 
     document.getElementById('cardNumberPreview').textContent = ` 
         ${document.getElementById('numeroCartao').value}`;
-        
+
     document.getElementById('cardValidadePreview').textContent = `Validade: 
         ${document.getElementById('validadeCartao').value}`;
 
@@ -117,3 +117,50 @@ function updateCardPreview() {
     document.getElementById('cardCPFPreview').textContent =
         `CPF: ${document.getElementById('cpfCartao').value}`;
 }
+
+// Função de validação para verificar se todos os campos estão preenchidos
+function validarCampos() {
+    const formaPagamento = formasPagamento.value;
+    let camposPreenchidos = true;
+
+    if (formaPagamento === 'cartao') {
+        // Verificar se os campos de cartão estão preenchidos
+        const nomeCartao = document.getElementById('nomeCartao').value;
+        const numeroCartao = document.getElementById('numeroCartao').value;
+        const validadeCartao = document.getElementById('validadeCartao').value;
+        const codigoSeguranca = document.getElementById('codigoSeguranca').value;
+        const diaVencimentoCartao = document.getElementById('diaVencimentoCartao').value;
+        const cpfCartao = document.getElementById('cpfCartao').value;
+        const bandeiraSelecionada = document.querySelector('input[name="bandeira"]:checked');
+
+        if (!nomeCartao || !numeroCartao || !validadeCartao || !codigoSeguranca || !diaVencimentoCartao || !cpfCartao || !bandeiraSelecionada) {
+            camposPreenchidos = false;
+        }
+    } else if (formaPagamento === 'boleto') {
+        // Verificar se os campos de boleto estão preenchidos
+        const nomeCompleto = document.getElementById('nomeCompleto').value;
+        const nomeMae = document.getElementById('nomeMae').value;
+        const cpf = document.getElementById('cpf').value;
+        const dataNascimento = document.getElementById('dataNascimento').value;
+        const email = document.getElementById('email').value;
+        const telefone = document.getElementById('telefone').value;
+
+        if (!nomeCompleto || !nomeMae || !cpf || !dataNascimento || !email || !telefone) {
+            camposPreenchidos = false;
+        }
+    }
+
+    return camposPreenchidos;
+}
+
+// Função para enviar o formulário
+btnEnviar.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    if (validarCampos()) {
+        // Exibir o número da retificação para o beneficiário
+        alert('Sua solicitação foi enviada com sucesso! Em breve será atendida.');
+    } else {
+        alert('Por favor, preencha todos os campos!');
+    }
+});

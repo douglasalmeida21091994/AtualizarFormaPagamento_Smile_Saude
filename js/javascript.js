@@ -54,10 +54,16 @@ function formatCardNumber() {
 function updateCardPreview() {
     document.getElementById('cardHolderPreview').textContent =
         document.getElementById('nomeCartao').value || 'Nome do Titular';
+
     document.getElementById('cardNumberPreview').textContent =
         document.getElementById('numeroCartao').value || '#### #### #### ####';
+        
+    document.getElementById('cardValidadePreview').textContent = `Validade: 
+        ${document.getElementById('validadeCartao').value}`;
+
     document.getElementById('cardCvvPreview').textContent =
         `CVV: ${document.getElementById('codigoSeguranca').value || '###'}`;
+
     document.getElementById('cardCPFPreview').textContent =
-        `CPF Titular: ${document.getElementById('cpfCartao').value}`;
+        `CPF: ${document.getElementById('cpfCartao').value}`;
 }

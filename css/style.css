@@ -176,7 +176,7 @@ ul li::before {
     margin-bottom: 2px;
 }
 
-#nomeCartao, #numeroCartao, #codigoSeguranca, #cpfCartao {
+#nomeCartao, #numeroCartao, #codigoSeguranca, #validadeCartao, #cpfCartao {
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;
@@ -230,8 +230,8 @@ ul li::before {
     font-size: 0.8em;
 }
 
-#cardHolderPreview, #cardNumberPreview, #cardCvvPreview {
-    margin-bottom: 15px;
+#cardHolderPreview, #cardNumberPreview, #cardCvvPreview, #validaCartao {
+    margin-bottom: 5px;
 }
 
 .footer-card {

@@ -83,31 +83,33 @@
 
                 </div>
 
+                <!-- DIV CARTÃO -->
                 <div id="cartaoFields" class="hidden">
                     <h3>Preencha os dados do Cartão de Crédito:</h3>
 
                     <label for="nomeCartao">Nome do Titular do Cartão:</label>
-
                     <input type="text" id="nomeCartao" oninput="updateCardPreview()"/><br>
 
                     <label for="numeroCartao">Número do Cartão:</label>
-
                     <input type="text" id="numeroCartao" maxlength="19" oninput="formatCardNumber()"/><br>
 
-                    <label for="codigoSeguranca">Código de Segurança (CVV):</label>
+                    <label for="validadeCartao">Validade do Cartão:</label>
+                    <input type="text" id="validadeCartao" maxlength="7" oninput="updateCardPreview()"/><br>
 
+                    <label for="codigoSeguranca">Código de Segurança (CVV):</label>
                     <input type="text" id="codigoSeguranca" maxlength="3" oninput="updateCardPreview()" /><br>
 
-                    <label for="cpfCartao">CPF do Titular:</label>
-                    
+                    <label for="cpfCartao">CPF do Titular:</label>                    
                     <input type="text" id="cpfCartao" maxlength="14" oninput="formatCPF(this)" /><br>
+
                     <!-- DADOS DO CARTÃO INICIAL -->
                     <div class="card-preview">
                         <h4>Cartão Virtual</h4>
                         <p id="cardHolderPreview">Nome do Titular</p>
                         <p id="cardNumberPreview">#### #### #### ####</p>
+                        <p id="cardValidadePreview">Validade: </p>
                         <p id="cardCvvPreview">CVV: ###</p>
-                        <p id="cardCPFPreview">CPF Titular: </p>
+                        <p id="cardCPFPreview">CPF: </p>
 
                         <div class="footer-card">
                             <p>Saúde que se renova!</p><span>ANS Nº 395480</span>                            

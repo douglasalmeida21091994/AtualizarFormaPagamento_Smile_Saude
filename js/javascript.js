@@ -14,19 +14,42 @@ formasPagamento.addEventListener('change', () => {
     btnEnviar.classList.toggle('hidden', valor === '');
 });
 
-function formatCPF(input) {
-    let valor = input.value.replace(/\D/g, ''); // Remove caracteres não numéricos
-    if (valor.length > 11) valor = valor.slice(0, 11); // Limita a 11 dígitos
+// Função para atualizar a imagem da bandeira do cartão
+function updateCardFlag() {
 
-    // Aplica a máscara de CPF
-    valor = valor.replace(/(\d{3})(\d)/, '$1.$2');
-    valor = valor.replace(/(\d{3})(\d)/, '$1.$2');
-    valor = valor.replace(/(\d{3})(\d{1,2})$/, '$1-$2');
+    // Obtém o valor do radio button selecionado
+    const bandeira = document.querySelector('input[name="bandeira"]:checked').value;
+    
+    // Mapeamento das bandeiras para os caminhos das imagens
+    const bandeiras = {
+        diners: 'img/diners.png',
+        elo: 'img/elo.png',
+        hiper: 'img/hiper.png',
+        master: 'img/master.png',
+        visa: 'img/visa.png'
+    };
+    
+    // Atualizar o src da imagem de visualização do cartão
+    const cardFlagPreview = document.getElementById('cardFlagPreview');
 
-    input.value = valor;
+    if (bandeiras[bandeira]) {
+        cardFlagPreview.src = bandeiras[bandeira];
+    } else {
+        cardFlagPreview.src = ''; // Caso não haja bandeira selecionada
+    }
+
+     // Ajustar a largura da imagem dependendo da bandeira selecionada
+    const cardFlagPreviewImage = document.getElementById('cardFlagPreview');
+
+    if (bandeira === 'hiper' || bandeira === 'master' || bandeira === 'visa') {
+        cardFlagPreviewImage.style.width = '50px'; // Ajusta a largura para 50px
+    } else {
+        cardFlagPreviewImage.style.width = '30px'; // Ajusta a largura para 30px (Diners, Elo)
+    }
+
 }
 
-
+// Função para formatar CPF
 function formatCPF(input) {
     let valor = input.value.replace(/\D/g, ''); // Remove caracteres não numéricos
     if (valor.length > 11) valor = valor.slice(0, 11); // Limita a 11 dígitos
@@ -38,8 +61,7 @@ function formatCPF(input) {
 
     input.value = valor;
 
-    // Atualiza a visualização do cartão
-    updateCardPreview();
+    updateCardPreview();  
 }
 
 function formatCardValidity(input) {
@@ -64,11 +86,9 @@ function formatCardValidity(input) {
             alert('Validade do cartão inválida!');
         }
     }
-
     // Atualiza a visualização do cartão
     updateCardPreview();
 }
-
 
 function formatCardNumber() {
     const numeroCartao = document.getElementById('numeroCartao');

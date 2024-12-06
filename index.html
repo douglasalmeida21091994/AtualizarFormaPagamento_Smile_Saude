@@ -88,13 +88,46 @@
                     <h3>Preencha os dados do Cartão de Crédito:</h3>
 
                     <label for="nomeCartao">Nome do Titular do Cartão:</label>
-                    <input type="text" id="nomeCartao" oninput="updateCardPreview()"/><br>
+                    <input type="text" id="nomeCartao" oninput="updateCardPreview()" /><br>
+
+                    <!-- Botões de seleção das bandeiras -->
+
+                    <div class="title-radio">
+                        <label>Cartão:</label><br>
+                    </div>
+
+                    <div class="radio-group">
+
+                        <input type="radio" id="bandeiraDiners" name="bandeira" value="diners"
+                            onclick="updateCardFlag()" />
+                        <label for="bandeiraDiners">Diners</label>
+                        <img src="img/diners.png" alt="Cartão Diners" id="diners">
+
+                        <input type="radio" id="bandeiraElo" name="bandeira" value="elo" onclick="updateCardFlag()" />
+                        <label for="bandeiraElo">Elo</label>
+                        <img src="img/elo.png" alt="Cartão Elo" id="elo">
+
+                        <input type="radio" id="bandeiraHiper" name="bandeira" value="hiper"
+                            onclick="updateCardFlag()" />
+                        <label for="bandeiraHiper">Hiper</label>
+                        <img src="img/hiper.png" alt="Cartão Hiper">
+
+                        <input type="radio" id="bandeiraMaster" name="bandeira" value="master"
+                            onclick="updateCardFlag()" />
+                        <label for="bandeiraMaster">Master</label>
+                        <img src="img/master.png" alt="Cartão Master">
+
+                        <input type="radio" id="bandeiraVisa" name="bandeira" value="visa" onclick="updateCardFlag()" />
+                        <label for="bandeiraVisa">Visa</label>
+                        <img src="img/visa.png" alt="Cartão Visa">
+
+                    </div><br>
 
                     <label for="numeroCartao">Número do Cartão:</label>
-                    <input type="text" id="numeroCartao" maxlength="19" oninput="formatCardNumber()"/><br>
+                    <input type="text" id="numeroCartao" maxlength="19" oninput="formatCardNumber()" /><br>
 
                     <label for="validadeCartao">Validade do Cartão:</label>
-                    <input type="text" id="validadeCartao" maxlength="7" oninput="formatCardValidity(this)"/><br>
+                    <input type="text" id="validadeCartao" maxlength="7" oninput="formatCardValidity(this)" /><br>
 
                     <label for="codigoSeguranca">Código de Segurança (CVV):</label>
                     <input type="text" id="codigoSeguranca" maxlength="3" oninput="updateCardPreview()" /><br>
@@ -102,7 +135,7 @@
                     <label for="diaVencimentoCartao">Dia de Vencimento da Fatura:</label>
                     <input type="text" id="diaVencimentoCartao" maxlength="2" oninput="updateCardPreview()" /><br>
 
-                    <label for="cpfCartao">CPF do Titular:</label>                    
+                    <label for="cpfCartao">CPF do Titular:</label>
                     <input type="text" id="cpfCartao" maxlength="14" oninput="formatCPF(this)" /><br>
 
                     <!-- DADOS DO CARTÃO INICIAL -->
@@ -115,8 +148,11 @@
                         <p id="diaVencimentoCartaoPreview">Vencimento Fatura: </p>
                         <p id="cardCPFPreview">CPF: </p>
 
+                        <!-- Imagem da bandeira do cartão -->
+                        <img id="cardFlagPreview" src="" class="card-flag-preview" />
+
                         <div class="footer-card">
-                            <span>ANS Nº 395480</span>                            
+                            <span>ANS Nº 395480</span>
                         </div>
 
                     </div>
@@ -142,7 +178,7 @@
 
                     <label for="telefone">Telefone:</label>
                     <input type="text" id="telefone" /><br>
-                    
+
                 </div>
 
                 <button id="btnEnviar" class="hidden">Realizar Solicitação</button>

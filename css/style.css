@@ -187,6 +187,51 @@ ul li::before {
     border: none;
 }
 
+.radio-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    flex-wrap: wrap;    
+    /* background-color: #555; */
+}
+
+.radio-group input[type="radio"] {
+    display: inline-block;
+}
+
+.radio-group label {
+    display: inline-block;
+    margin-right: 5px;    
+    font-size: 1.1rem;
+    color: #f1f1f1;
+}
+
+.title-radio {
+    display: block;
+    margin-bottom: 2px;
+}
+
+.title-radio > label {
+    font-size: 1.1rem;
+    color: #f1f1f1;
+    font-weight: 450;
+}
+
+.radio-group img {
+    width: 30px;    
+}
+
+#elo {
+    width: 20px;
+    height: 20px;
+}
+
+#diners {
+    width: 25px;
+    height: 25px;
+}
+
 .card-preview {
     border: 2px solid #f3f3f3a6;
     border-radius: 10px;
@@ -232,6 +277,14 @@ ul li::before {
 
 #cardHolderPreview, #cardNumberPreview, #cardCvvPreview, #validaCartao {
     margin-bottom: 5px;
+}
+
+.card-flag-preview {
+    position:absolute;
+    bottom: 15px;
+    right: 15px;
+    width: 30px; 
+    height: auto;
 }
 
 .footer-card {

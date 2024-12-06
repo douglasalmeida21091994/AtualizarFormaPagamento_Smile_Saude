@@ -37,6 +37,9 @@ function formatCPF(input) {
     valor = valor.replace(/(\d{3})(\d{1,2})$/, '$1-$2');
 
     input.value = valor;
+
+    // Atualiza a visualização do cartão
+    updateCardPreview();
 }
 
 
@@ -55,4 +58,6 @@ function updateCardPreview() {
         document.getElementById('numeroCartao').value || '#### #### #### ####';
     document.getElementById('cardCvvPreview').textContent =
         `CVV: ${document.getElementById('codigoSeguranca').value || '###'}`;
+    document.getElementById('cardCPFPreview').textContent =
+        `CPF Titular: ${document.getElementById('cpfCartao').value}`;
 }

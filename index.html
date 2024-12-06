@@ -100,14 +100,19 @@
 
                     <label for="cpfCartao">CPF do Titular:</label>
                     
-                    <input type="text" id="cpfCartao" maxlength="14" oninput="formatCPF(this)"/><br>
+                    <input type="text" id="cpfCartao" maxlength="14" oninput="formatCPF(this)" /><br>
                     <!-- DADOS DO CARTÃO INICIAL -->
                     <div class="card-preview">
                         <h4>Cartão Virtual</h4>
                         <p id="cardHolderPreview">Nome do Titular</p>
                         <p id="cardNumberPreview">#### #### #### ####</p>
                         <p id="cardCvvPreview">CVV: ###</p>
-                        
+                        <p id="cardCPFPreview">CPF Titular: </p>
+
+                        <div class="footer-card">
+                            <p>Saúde que se renova!</p><span>ANS Nº 395480</span>                            
+                        </div>
+
                     </div>
                 </div>
 

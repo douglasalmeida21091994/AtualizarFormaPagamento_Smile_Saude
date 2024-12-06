@@ -192,3 +192,67 @@ function formatTelefone(input) {
     input.value = valor;
 }
 
+// Função para fechar o modal
+// function closeModal() {
+//     document.getElementById("modal").style.display = "none";
+//     document.body.classList.remove("modal-open");
+// }
+
+// Exibe o modal assim que a página carrega  // DESCOMENTAR DEPOIS
+// window.onload = function () {
+//     document.getElementById("modal").style.display = "flex";
+//     document.body.classList.add("modal-open");
+// };
+
+// // Adiciona a funcionalidade de envio do formulário, caso necessário
+// document.getElementById("form").addEventListener("submit", function (event) {
+//     event.preventDefault(); // Impede o envio do formulário para teste
+//     closeModal(); // Fecha o modal ao submeter
+// });
+
+// FUNÇÃO CHAMANDO API PARA VERIFICAR SE HÁ ALTERAÇÃO DE VENCIMENTO PARA PRO RATA
+
+// Função que será chamada quando o blur for disparado
+function chamarAPI(campoId) {
+    let valor = document.getElementById(campoId).value;
+    // alert(valor);
+    // Exemplo de como enviar para a API, adaptando para o que você precisa
+     const param1 = '0801117.00';
+     const param2 = '5';
+ 
+     // Construct the URL with query parameters
+     const apiUrl = `http://ws.smilesaude.com.br/api/forma-pagamento/pro-rata/${param1}/${param2}`;
+ 
+     // Make the GET request
+     fetch(apiUrl, {
+         method: 'GET', // Specify the HTTP method
+         headers: {
+             'Content-Type': 'application/json' // Set the header
+         },
+         mode: 'no-cors'
+     })
+     .then(response => {
+         if (!response.ok) {
+             throw new Error('Network response was not ok');
+         }
+         return response.json(); // Parse the response as JSON
+     })
+     .then(data => {
+         console.log('API Response:', data); // Handle the data
+     })
+     .catch(error => {
+         console.error('There was a problem with the fetch operation:', error); // Handle errors
+     });
+}
+
+// Adiciona o evento blur para o campo vencMensalidadeBoleto
+document.getElementById('vencMensalidadeBoleto').addEventListener('blur', function () {
+    chamarAPI('vencMensalidadeBoleto');
+});
+
+// Adiciona o evento blur para o campo diaVencimentoCartao
+document.getElementById('diaVencimentoCartao').addEventListener('blur', function () {
+    chamarAPI('diaVencimentoCartao');
+});
+
+

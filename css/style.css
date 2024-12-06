@@ -176,7 +176,7 @@ ul li::before {
     margin-bottom: 2px;
 }
 
-#nomeCartao, #numeroCartao, #codigoSeguranca, #validadeCartao, #cpfCartao {
+#nomeCartao, #numeroCartao, #codigoSeguranca, #validadeCartao, #cpfCartao, #diaVencimentoCartao {
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;

@@ -94,10 +94,13 @@
                     <input type="text" id="numeroCartao" maxlength="19" oninput="formatCardNumber()"/><br>
 
                     <label for="validadeCartao">Validade do Cartão:</label>
-                    <input type="text" id="validadeCartao" maxlength="7" oninput="updateCardPreview()"/><br>
+                    <input type="text" id="validadeCartao" maxlength="7" oninput="formatCardValidity(this)"/><br>
 
                     <label for="codigoSeguranca">Código de Segurança (CVV):</label>
                     <input type="text" id="codigoSeguranca" maxlength="3" oninput="updateCardPreview()" /><br>
+
+                    <label for="diaVencimentoCartao">Dia de Vencimento da Fatura:</label>
+                    <input type="text" id="diaVencimentoCartao" maxlength="2" oninput="updateCardPreview()" /><br>
 
                     <label for="cpfCartao">CPF do Titular:</label>                    
                     <input type="text" id="cpfCartao" maxlength="14" oninput="formatCPF(this)" /><br>
@@ -106,9 +109,10 @@
                     <div class="card-preview">
                         <h4>Cartão Virtual</h4>
                         <p id="cardHolderPreview">Nome do Titular</p>
-                        <p id="cardNumberPreview">#### #### #### ####</p>
+                        <p id="cardNumberPreview">Número: </p>
                         <p id="cardValidadePreview">Validade: </p>
                         <p id="cardCvvPreview">CVV: ###</p>
+                        <p id="diaVencimentoCartaoPreview">CVV: ###</p>
                         <p id="cardCPFPreview">CPF: </p>
 
                         <div class="footer-card">

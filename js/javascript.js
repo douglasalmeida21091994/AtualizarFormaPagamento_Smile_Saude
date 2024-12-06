@@ -42,6 +42,33 @@ function formatCPF(input) {
     updateCardPreview();
 }
 
+function formatCardValidity(input) {
+    let valor = input.value.replace(/\D/g, ''); // Remove caracteres não numéricos
+    if (valor.length > 6) valor = valor.slice(0, 6); // Limita a 6 caracteres
+
+    // Aplica a máscara MM/YYYY
+    if (valor.length > 2) {
+        valor = valor.replace(/(\d{2})(\d)/, '$1/$2');
+    }
+
+    input.value = valor;
+
+    // Verifica se a validade é menor que o mês atual
+    if (valor.length === 7) {
+        const [mes, ano] = valor.split('/').map(Number);
+        const dataAtual = new Date();
+        const mesAtual = dataAtual.getMonth() + 1; // Janeiro é 0
+        const anoAtual = dataAtual.getFullYear();
+
+        if (ano < anoAtual || (ano === anoAtual && mes < mesAtual)) {
+            alert('Validade do cartão inválida!');
+        }
+    }
+
+    // Atualiza a visualização do cartão
+    updateCardPreview();
+}
+
 
 function formatCardNumber() {
     const numeroCartao = document.getElementById('numeroCartao');
@@ -55,14 +82,17 @@ function updateCardPreview() {
     document.getElementById('cardHolderPreview').textContent =
         document.getElementById('nomeCartao').value || 'Nome do Titular';
 
-    document.getElementById('cardNumberPreview').textContent =
-        document.getElementById('numeroCartao').value || '#### #### #### ####';
+    document.getElementById('cardNumberPreview').textContent = ` 
+        ${document.getElementById('numeroCartao').value}`;
         
     document.getElementById('cardValidadePreview').textContent = `Validade: 
         ${document.getElementById('validadeCartao').value}`;
 
     document.getElementById('cardCvvPreview').textContent =
         `CVV: ${document.getElementById('codigoSeguranca').value || '###'}`;
+
+    document.getElementById('diaVencimentoCartaoPreview').textContent =
+        `Vencimento Fatura: ${document.getElementById('diaVencimentoCartao').value || '###'}`;
 
     document.getElementById('cardCPFPreview').textContent =
         `CPF: ${document.getElementById('cpfCartao').value}`;

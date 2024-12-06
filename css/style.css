@@ -7,11 +7,11 @@
     font-family: "Roboto", serif;
 }
 
-.title {    
+.title {
     text-align: center;
-    background-image: linear-gradient(135deg, rgb(75,63,197) 0%,rgb(79,145,214) 100%);
-    margin-top: 0;   
-    padding: 20px 0;    
+    background-image: linear-gradient(135deg, rgb(75, 63, 197) 0%, rgb(79, 145, 214) 100%);
+    margin-top: 0;
+    padding: 20px 0;
     text-transform: uppercase;
     color: #fff;
     display: flex;
@@ -23,50 +23,53 @@
 
 .title-image {
     position: absolute;
-    left: 20px;    
+    left: 20px;
 }
 
 .main {
     padding: 20px 0;
     width: 100%;
-    
+
     display: flex;
     justify-content: center;
-    background-color: #fff; /* Cor de fundo da main */
-    position: relative; /* Necessário para o efeito de backdrop-filter */
+    background-color: #fff;
+    /* Cor de fundo da main */
+    position: relative;
+    /* Necessário para o efeito de backdrop-filter */
 }
 
 .content {
     max-width: 1200px;
     padding: 20px;
-    background-color: #f3f3f3bd; /* Cor de fundo semi-transparente */
-    border-radius: 5px;    
+    background-color: #f3f3f3bd;
+    /* Cor de fundo semi-transparente */
+    border-radius: 5px;
     transition: all 0.3s ease;
-   /* backdrop-filter: blur(10px);  Aplica o efeito de blur ao fundo atrás da content */
-   /* -webkit-backdrop-filter: blur(10px); /* Necessário para compatibilidade com navegadores Webkit (Safari) */
+    /* backdrop-filter: blur(10px);  Aplica o efeito de blur ao fundo atrás da content */
+    /* -webkit-backdrop-filter: blur(10px); /* Necessário para compatibilidade com navegadores Webkit (Safari) */
 }
 
 
 .cliente {
     font-size: 1.5rem;
-    color: #333333f1;    
+    color: #333333f1;
     display: block;
     margin-bottom: 10px;
 }
 
-.content p {  
-    color: #555;  
+.content p {
+    color: #555;
     font-size: 1.1rem;
     width: 100%;
     margin: 5px 0;
     text-align: justify;
     letter-spacing: 1.1px;
-    line-height: 20px; 
+    line-height: 20px;
 }
 
 ol {
-    list-style-position: inside; 
-    margin-top: 10px;   
+    list-style-position: inside;
+    margin-top: 10px;
 }
 
 ol li {
@@ -76,13 +79,14 @@ ol li {
 }
 
 ul {
-    list-style: none; 
+    list-style: none;
     padding: 0;
 }
 
 ul li {
-    position: relative; /* posição relativa para o pseudo-elemento */
-    padding-left: 25px; 
+    position: relative;
+    /* posição relativa para o pseudo-elemento */
+    padding-left: 25px;
     margin-bottom: 10px;
     margin-top: 10px;
     font-size: 1.1rem;
@@ -91,15 +95,21 @@ ul li {
 }
 
 ul li::before {
-    content: "\f00c"; /* Código do ícone Font Awesome (checkmark) */
+    content: "\f00c";
+    /* Código do ícone Font Awesome (checkmark) */
     font-family: "Font Awesome 6 Free";
-    font-weight: 900; /* Garante que o ícone seja preenchido (solid) */
+    font-weight: 900;
+    /* Garante que o ícone seja preenchido (solid) */
     position: absolute;
     left: 0;
-    top: 50%; /* Centraliza verticalmente */
-    transform: translateY(-50%); /* Ajusta o alinhamento vertical */
-    color: rgba(74, 63, 197, 0.774); /* Cor do ícone */
-    font-size: 1.2rem; /* Tamanho do ícone */
+    top: 50%;
+    /* Centraliza verticalmente */
+    transform: translateY(-50%);
+    /* Ajusta o alinhamento vertical */
+    color: rgba(74, 63, 197, 0.774);
+    /* Cor do ícone */
+    font-size: 1.2rem;
+    /* Tamanho do ícone */
 }
 
 .content h2 {
@@ -107,12 +117,14 @@ ul li::before {
     margin-bottom: 10px;
 }
 
-.content h3, h4 {
+.content h3,
+h4 {
     color: #555;
     margin-bottom: 10px;
 }
 
-.content ul > li > a, #telefone_lis {
+.content ul>li>a,
+#telefone_lis {
     text-decoration: none;
     color: rgb(74, 63, 197);
 }
@@ -130,11 +142,11 @@ ul li::before {
 }
 
 .alteracao {
-    text-align: center;   
-    width: 100%; 
+    text-align: center;
+    width: 100%;
 }
 
-.alteracao > h2 {
+.alteracao>h2 {
     color: #fff;
     margin-bottom: 15px;
     text-transform: uppercase;
@@ -157,7 +169,7 @@ ul li::before {
     display: none;
 }
 
-#cartaoFields {    
+#cartaoFields {
     padding: 15px;
 }
 
@@ -168,7 +180,7 @@ ul li::before {
     margin-bottom: 15px;
 }
 
-#cartaoFields > label {    
+#cartaoFields>label {
     font-size: 1.1rem;
     display: block;
     color: #f1f1f1;
@@ -176,7 +188,12 @@ ul li::before {
     margin-bottom: 2px;
 }
 
-#nomeCartao, #numeroCartao, #codigoSeguranca, #validadeCartao, #cpfCartao, #diaVencimentoCartao {
+#nomeCartao,
+#numeroCartao,
+#codigoSeguranca,
+#validadeCartao,
+#cpfCartao,
+#diaVencimentoCartao {
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;
@@ -192,7 +209,7 @@ ul li::before {
     justify-content: center;
     align-items: center;
     gap: 5px;
-    flex-wrap: wrap;    
+    flex-wrap: wrap;
     /* background-color: #555; */
 }
 
@@ -202,7 +219,7 @@ ul li::before {
 
 .radio-group label {
     display: inline-block;
-    margin-right: 5px;    
+    margin-right: 5px;
     font-size: 1.1rem;
     color: #f1f1f1;
 }
@@ -212,14 +229,14 @@ ul li::before {
     margin-bottom: 2px;
 }
 
-.title-radio > label {
+.title-radio>label {
     font-size: 1.1rem;
     color: #f1f1f1;
     font-weight: 450;
 }
 
 .radio-group img {
-    width: 30px;    
+    width: 30px;
 }
 
 #elo {
@@ -239,10 +256,10 @@ ul li::before {
     height: 250px;
     padding: 15px;
     margin: 15px 0;
-    background: linear-gradient(135deg, rgb(75,63,197) 0%,rgb(79,145,214) 100%); 
-    box-shadow: 0px 2px 2px rgba(255, 255, 255, 0.6);   
+    background: linear-gradient(135deg, rgb(75, 63, 197) 0%, rgb(79, 145, 214) 100%);
+    box-shadow: 0px 2px 2px rgba(255, 255, 255, 0.6);
     font-family: Arial, sans-serif;
-    position: relative;   
+    position: relative;
 }
 
 .card-preview h4 {
@@ -275,15 +292,18 @@ ul li::before {
     font-size: 0.8em;
 }
 
-#cardHolderPreview, #cardNumberPreview, #cardCvvPreview, #validaCartao {
+#cardHolderPreview,
+#cardNumberPreview,
+#cardCvvPreview,
+#validaCartao {
     margin-bottom: 5px;
 }
 
 .card-flag-preview {
-    position:absolute;
+    position: absolute;
     bottom: 15px;
     right: 15px;
-    width: 30px; 
+    width: 30px;
     height: auto;
 }
 
@@ -292,19 +312,17 @@ ul li::before {
     /* background-color: #555; */
     bottom: 3px;
     left: 50%;
-    transform: translate(-50%);    
+    transform: translate(-50%);
     opacity: .8;
 }
 
-.footer-card > span {
+.footer-card>span {
     display: block;
     /* background-color: #555; */
     text-align: center;
     color: #dddddd;
     font-size: 12px;
 }
-
-
 
 .input-field {
     margin-bottom: 10px;
@@ -325,7 +343,7 @@ ul li::before {
 
 button {
     background-color: #ffffff;
-    color: rgb(75,63,197);    
+    color: rgb(75, 63, 197);
     border: none;
     padding: 10px 10px;
     width: 250px;
@@ -337,8 +355,44 @@ button {
 }
 
 button:hover {
-    background-color: rgb(75,63,197); 
+    background-color: rgb(75, 63, 197);
     color: #fff;
     transition: all 0.3s ease;
 }
 
+/* STYLE PARA BOLETOS */
+
+#boletoFields h3 {
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+#boletoFields>label {
+    font-size: 1.1rem;
+    display: block;
+    color: #f1f1f1;
+    font-weight: 450;
+    margin-bottom: 2px;
+}
+
+#nomeCompleto,
+#nomeMae,
+#cpf,
+#dataNascimento,
+#email,
+#telefone {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    background-color: #f1f1f1;
+    color: #222222d5;
+    border: none;
+}
+
+#btnEnviar {
+    margin-top: 10px;
+}

@@ -35,7 +35,7 @@
     justify-content: center;
     background-color: #fff;
     position: relative;
-    padding: 20px;
+    padding: 20px 20ox 40px 20px;
     /* background-color: #555; */
 }
 
@@ -162,12 +162,12 @@ h4 {
 
 .alteracao {
     text-align: center;
-    width: 100%;
+    width: 85%;
 }
 
 .alteracao>h2 {
     color: #fff;
-    margin-bottom: 15px;
+    /* margin-bottom: 15px; */
     text-transform: uppercase;
     width: 100%;
 }
@@ -180,7 +180,7 @@ h4 {
     color: rgb(74, 63, 197);
     font-size: 1.1rem;
     border: none;
-    margin-bottom: 15px;
+    /* margin-bottom: 15px; */
 }
 
 
@@ -188,7 +188,7 @@ h4 {
     display: none;
 }
 
-#cartaoFields {
+#cartaoFields, #boletoFields {
     padding: 15px;
 }
 
@@ -225,7 +225,7 @@ h4 {
 
 .radio-group {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start; 
     align-items: center;
     gap: 3px;
     flex-wrap: wrap; 
@@ -355,21 +355,27 @@ input[type="radio"] {
     opacity: .8;
 }
 
-.proRataCartão {
+.proRataCartão, .proRataBoleto {
     background-color: #ff7c7c;
     padding: 10px;
     border-radius: 5px;  
     max-width: 600px;  
     margin-top: 10px;
-    margin-bottom: 10px;    
+    margin-bottom: 10px;  
+
+    display: none;
+    
 }
 
-.proRataCartão p {
+.proRataCartão p, .proRataBoleto p {
     color: #dddddd;
 }
 
 #confirm {
     margin: 10px 0;
+    display: flex;
+    align-items: center; /* Alinha o checkbox e o texto verticalmente */
+    gap: 10px;
 }
 
 #confirm label {
@@ -378,8 +384,10 @@ input[type="radio"] {
 }
 
 #confirm input[type="checkbox"] {
-    transform: scale(1.2);
-    margin-right: 5px; 
+    transform: scale(1.2);    
+    width: 20px; 
+    height: 20px;
+    cursor: pointer;
 }
 
 #confirmProRata {
@@ -442,6 +450,11 @@ button:hover {
 
 /* STYLE PARA BOLETOS */
 
+#boletoFields, #cartaoFields {
+    width: 70%;
+    transition: all 0.3s ease;
+}
+
 #boletoFields h3 {
     color: #fff;
     text-align: center;
@@ -483,6 +496,7 @@ button:hover {
 #btnEnviar:hover {
     background-color: #4f8cd5;
     color: #fff;
+    border: 1.5px solid #ffffff4e;
 }
 
 /* ########## MODAL ############ */
@@ -624,13 +638,11 @@ button:hover {
         background-color: #fff;
     } 
 
-    /* Ajuste da lista de opções de pagamento */
     #formasPagamento {
-        width: 100%; /* Tamanho completo */
+        width: 100%; 
         padding: 12px;
     }
 
-    /* Estilização dos campos de formulário */
     #cartaoFields input,
     #boletoFields input {
         width: 100%;
@@ -639,22 +651,21 @@ button:hover {
     }
 
     .card-preview {
-        width: 100%; /* 100% da largura disponível */
-        height: auto; /* Ajusta a altura automaticamente */
+        width: 100%;
+        height: auto;
         margin: 15px 0;
     }   
 
     /* Ajuste do botão */
     button {
-        width: 100%; /* O botão ocupa toda a largura */
+        width: 100%;
         padding: 12px 0;
         font-size: 1.1rem;
     }
 
-    /* Ajustes nas listas */
     ul li {
         font-size: 1rem;
-        padding-left: 20px; /* Ajusta o espaçamento da lista */
+        padding-left: 20px;
     }
 
     .cliente {
@@ -666,14 +677,13 @@ button:hover {
     .content h2,
     .content h3 {
         font-size: 1rem;
-        margin-bottom: 15px;
+        margin-bottom: 5px;
     }
 
-    /* Ajustes no campo de CPF e telefone */
     #cpfCartao,
     #cpf,
     #telefone {
-        font-size: 1rem; /* Ajusta o tamanho da fonte dos campos */
+        font-size: 1rem; 
     }
 
     .dadosCartao {
@@ -685,7 +695,7 @@ button:hover {
     }
 
     .footer-card {
-        margin-top: 15px;        
+        margin-top: 20px;        
     }
 
     .footer-card > span {        
@@ -695,7 +705,7 @@ button:hover {
     .radio-group {
         display: flex;
         justify-content: flex-start; 
-        align-items: center;
+        align-items: flex-start;
         gap: 10px;
         flex-wrap: wrap;
     }
@@ -709,6 +719,15 @@ button:hover {
     .radio-group img {
         width: 35px;
         height: auto;
+    }
+
+    #boletoFields, #cartaoFields, .alteracao {
+        width: 100%;
+        transition: all 0.3s ease;
+    }
+
+    #boletoFields {
+        padding: 0;
     }
 
 }

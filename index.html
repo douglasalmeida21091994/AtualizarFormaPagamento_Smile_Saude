@@ -19,7 +19,7 @@
         <div class="modal-box">
             <header class="modal-header">
                 <h1>AUTENTICAÇÃO</h1>
-                <!-- <a href="javascript:void(0);" class="j_modal_close icon-notext icon-cancel" onclick="closeModal()">×</a> -->
+                <!- <a href="javascript:void(0);" class="j_modal_close icon-notext icon-cancel" onclick="closeModal()">×</a> -->
             <!-- </header>
 
             <div class="modal-content">
@@ -83,7 +83,7 @@
 
                 <!-- DIV CARTÃO -->
                 <div id="cartaoFields" class="hidden">
-                    <h3>Preencha os dados do Cartão de Crédito</h3>
+                    <h3>Preencha os Abaixo</h3>
 
                     <label for="nomeCartao">Nome do Titular do Cartão:</label>
                     <input type="text" id="nomeCartao" oninput="updateCardPreview()" /><br>
@@ -95,31 +95,38 @@
                     </div>
 
                     <div class="radio-group">
-
-                        <input type="radio" id="bandeiraDiners" name="bandeira" value="diners"
-                            onclick="updateCardFlag()" />
-                        <label for="bandeiraDiners">Diners</label>
-                        <img src="img/diners.png" alt="Cartão Diners" id="diners">
-
-                        <input type="radio" id="bandeiraElo" name="bandeira" value="elo" onclick="updateCardFlag()" />
-                        <label for="bandeiraElo">Elo</label>
-                        <img src="img/elo.png" alt="Cartão Elo" id="elo">
-
-                        <input type="radio" id="bandeiraHiper" name="bandeira" value="hiper"
-                            onclick="updateCardFlag()" />
-                        <label for="bandeiraHiper">Hiper</label>
-                        <img src="img/hiper.png" alt="Cartão Hiper">
-
-                        <input type="radio" id="bandeiraMaster" name="bandeira" value="master"
-                            onclick="updateCardFlag()" />
-                        <label for="bandeiraMaster">Master</label>
-                        <img src="img/master.png" alt="Cartão Master">
-
-                        <input type="radio" id="bandeiraVisa" name="bandeira" value="visa" onclick="updateCardFlag()" />
-                        <label for="bandeiraVisa">Visa</label>
-                        <img src="img/visa.png" alt="Cartão Visa">
-
-                    </div><br>
+                        <div class="radio-item">
+                            <input type="radio" id="bandeiraDiners" name="bandeira" value="diners" onclick="updateCardFlag()" />
+                            <label for="bandeiraDiners">Diners</label>
+                            <img src="img/diners.png" alt="Cartão Diners" id="diners">
+                        </div>
+                    
+                        <div class="radio-item">
+                            <input type="radio" id="bandeiraElo" name="bandeira" value="elo" onclick="updateCardFlag()" />
+                            <label for="bandeiraElo">Elo</label>
+                            <img src="img/elo.png" alt="Cartão Elo" id="elo">
+                        </div>
+                    
+                        <div class="radio-item">
+                            <input type="radio" id="bandeiraHiper" name="bandeira" value="hiper" onclick="updateCardFlag()" />
+                            <label for="bandeiraHiper">Hiper</label>
+                            <img src="img/hiper.png" alt="Cartão Hiper">
+                        </div>
+                    
+                        <div class="radio-item">
+                            <input type="radio" id="bandeiraMaster" name="bandeira" value="master" onclick="updateCardFlag()" />
+                            <label for="bandeiraMaster">Master</label>
+                            <img src="img/master.png" alt="Cartão Master">
+                        </div>
+                    
+                        <div class="radio-item">
+                            <input type="radio" id="bandeiraVisa" name="bandeira" value="visa" onclick="updateCardFlag()" />
+                            <label for="bandeiraVisa">Visa</label>
+                            <img src="img/visa.png" alt="Cartão Visa">
+                        </div>
+                    </div>
+                    
+                    <!-- <br> -->
 
                     <label for="numeroCartao">Número do Cartão:</label>
                     <input type="text" id="numeroCartao" maxlength="19" oninput="formatCardNumber()" /><br>
@@ -140,22 +147,21 @@
                         pattern="[0-9]*" oninput="formatCPF(this)" /><br>
 
                     <!-- DADOS DO CARTÃO INICIAL -->
-                    <div class="card-preview">
-                        <h4>Cartão Virtual</h4>
-                        <p id="cardHolderPreview">Nome do Titular</p>
-                        <p id="cardNumberPreview">Número: </p>
-                        <p id="cardValidadePreview">Validade: </p>
-                        <p id="cardCvvPreview">CVV: </p>
-                        <p id="diaVencimentoCartaoPreview">Vencimento Fatura: </p>
-                        <p id="cardCPFPreview">CPF: </p>
-
-                        <!-- Imagem da bandeira do cartão -->
-                        <img id="cardFlagPreview" src="" class="card-flag-preview" />
-
-                        <div class="footer-card">
-                            <span>ANS Nº 395480</span>
+                    <div class="card">
+                        <div class="card-preview">
+                            <h4>Cartão Virtual</h4>
+                            <p id="cardHolderPreview">Nome do Titular</p>
+                            <p id="cardNumberPreview">Número: </p>
+                            <p id="cardValidadePreview">Validade: </p>
+                            <p id="cardCvvPreview">CVV: </p>
+                            <p id="diaVencimentoCartaoPreview">Vencimento Fatura: </p>
+                            <p id="cardCPFPreview">CPF: </p>
+                            <!-- Imagem da bandeira do cartão -->
+                            <img id="cardFlagPreview" src="" class="card-flag-preview" />
+                            <div class="footer-card">
+                                <span>ANS Nº 395480</span>
+                            </div>
                         </div>
-
                     </div>
 
                     <div class="proRataCartão">
@@ -165,14 +171,21 @@
                         </div>
 
                         <div id="dadosCliente">
-                            <label for="VencAtual">Novo Vencimento:</label>
+                            <label for="VencAtual" >Novo Vencimento:</label>
                         </div>
 
                         <div id="dadosCliente">
                             <label for="VencAtual">Valor da Mensalidade:</label>
                         </div>
                         
-                        <p class="retornoProRata" id="retornoProRata"></p>
+                        <p class="retornoProRata" id="retornoProRata">
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio aliquid cumque veritatis accusamus! Ducimus minus quaerat ratione cum quis voluptate distinctio odio dignissimos impedit. Et asperiores illo sequi quaerat quasi.
+                        </p>
+
+                        <div id="confirm">
+                            <input type="checkbox" name="confirmProRata" id="confirmProRata" required>
+                            <label for="confirmProRata">Confirmo que estou ciente do valor da pro rata.</label>
+                        </div>
 
                     </div>
 

@@ -27,26 +27,23 @@
 }
 
 .main {
-    padding: 20px 0;
-    width: 100%;
-
+    max-width: 100%;
+    min-width: 100%;
     display: flex;
     justify-content: center;
+    align-items: center;
+    justify-content: center;
     background-color: #fff;
-    /* Cor de fundo da main */
     position: relative;
-    /* Necessário para o efeito de backdrop-filter */
+    padding: 20px;
+    /* background-color: #555; */
 }
 
 .content {
-    max-width: 1200px;
+    max-width: 1200px;  /* Altere para width 100% se não precisar de max-width */
     padding: 20px;
-    background-color: #f3f3f3bd;
-    /* Cor de fundo semi-transparente */
+    /* background-color: #f3f3f3bd; */
     border-radius: 5px;
-    transition: all 0.3s ease;
-    /* backdrop-filter: blur(10px);  Aplica o efeito de blur ao fundo atrás da content */
-    /* -webkit-backdrop-filter: blur(10px); /* Necessário para compatibilidade com navegadores Webkit (Safari) */
 }
 
 
@@ -132,13 +129,35 @@ h4 {
 
 .dadosCartao {
     margin: 15px 0;
-    background-color: #648be7d2;
+    /* background-color: #648be7d2; */    
     border-radius: 5px;
     padding: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    
+    background: linear-gradient(34deg, rgba(74, 63, 197, 0.78) 36%, rgba(0, 213, 255, 0.713) 100%);
+    background-size: 400% 400%;
+    -webkit-animation: AnimationName 27s ease infinite;
+    -moz-animation: AnimationName 27s ease infinite;
+    animation: AnimationName 15s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
 }
 
 .alteracao {
@@ -208,13 +227,25 @@ h4 {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 5px;
-    flex-wrap: wrap;
-    /* background-color: #555; */
+    gap: 3px;
+    flex-wrap: wrap; 
 }
 
-.radio-group input[type="radio"] {
+.radio-item {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+/* Aumentando o tamanho do radio button */
+input[type="radio"] {
+    transform: scale(1.2); /* Aumenta o tamanho da bolinha */
+    margin-right: 10px; /* Ajuste o espaçamento se necessário */    
+}
+
+.radio-group input[type="radio"], .radio-group label, .radio-group img {
     display: inline-block;
+    margin: 0 2px;
 }
 
 .radio-group label {
@@ -236,7 +267,7 @@ h4 {
 }
 
 .radio-group img {
-    width: 30px;
+    width: 40px;
 }
 
 #elo {
@@ -249,15 +280,23 @@ h4 {
     height: 25px;
 }
 
+.card {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .card-preview {
-    border: 2px solid #f3f3f3a6;
+    /* border: 2px solid #334155; */
     border-radius: 10px;
     width: 500px;
     height: 250px;
     padding: 15px;
     margin: 15px 0;
-    background: linear-gradient(135deg, rgb(75, 63, 197) 0%, rgb(79, 145, 214) 100%);
-    box-shadow: 0px 2px 2px rgba(255, 255, 255, 0.6);
+    /* background: linear-gradient(135deg, rgb(75, 63, 197) 0%, rgb(79, 145, 214) 100%); */
+    background: linear-gradient(to top, #09203f 0%, #537895 100%);
+    box-shadow: 0px 2px 2px #334155;
     font-family: Arial, sans-serif;
     position: relative;
 }
@@ -266,7 +305,7 @@ h4 {
     text-align: center;
     text-transform: uppercase;
     margin: 5px 0;
-    color: #dddddd;
+    color: #eeeeee;
     margin-bottom: 15px;
 }
 
@@ -316,12 +355,54 @@ h4 {
     opacity: .8;
 }
 
-.footer-card>span {
+.proRataCartão {
+    background-color: #ff7c7c;
+    padding: 10px;
+    border-radius: 5px;  
+    max-width: 600px;  
+    margin-top: 10px;
+    margin-bottom: 10px;    
+}
+
+.proRataCartão p {
+    color: #dddddd;
+}
+
+#confirm {
+    margin: 10px 0;
+}
+
+#confirm label {
+    color: #dddddd;
+    font-size: 1.1rem;
+}
+
+#confirm input[type="checkbox"] {
+    transform: scale(1.2);
+    margin-right: 5px; 
+}
+
+#confirmProRata {
+    border-radius: 3px;
+}
+
+#dadosCliente {
+    padding: 5px;
+    border-bottom: 1.5px solid #ffffff40;    
+}
+
+#dadosCliente label {
+    color: #dddddd;
+    font-weight: 450;
+    font-size: 1.1rem;
+}
+
+.footer-card > span {
     display: block;
     /* background-color: #555; */
     text-align: center;
     color: #dddddd;
-    font-size: 12px;
+    font-size: 0.8rem;
 }
 
 .input-field {
@@ -342,8 +423,7 @@ h4 {
 }
 
 button {
-    background-color: #ffffff;
-    color: rgb(75, 63, 197);
+    background-color: #ffffff;   
     border: none;
     padding: 10px 10px;
     width: 250px;
@@ -355,7 +435,7 @@ button {
 }
 
 button:hover {
-    background-color: rgb(75, 63, 197);
+    background-color: #fff;
     color: #fff;
     transition: all 0.3s ease;
 }
@@ -394,8 +474,15 @@ button:hover {
 }
 
 #btnEnviar {
-    margin-top: 10px;
+    margin-bottom: 5px;
     max-width: 250px;
+    background-color: #fff;
+    color: #4a3fc5c8;
+}
+
+#btnEnviar:hover {
+    background-color: #4f8cd5;
+    color: #fff;
 }
 
 /* ########## MODAL ############ */
@@ -509,6 +596,120 @@ button:hover {
     background-color: #4B3FC5;
 }
 
-#dadosCliente label {
-    color: #f0f0f0;
+@media (max-width: 670px) {   
+    
+    /* Ajuste para o título e imagem */
+    .title {
+        padding: 15px;
+        text-align: center;
+    }
+    
+    .title > h2 {
+        font-size: 1rem;
+    }
+    
+    .title-image {        
+        left: 0;
+        width: 50px;
+    }
+    
+    .main {
+        padding: 0px;
+        flex-direction: column;
+    }
+
+    .content {
+        width: 100%;
+        padding: 10px;
+        background-color: #fff;
+    } 
+
+    /* Ajuste da lista de opções de pagamento */
+    #formasPagamento {
+        width: 100%; /* Tamanho completo */
+        padding: 12px;
+    }
+
+    /* Estilização dos campos de formulário */
+    #cartaoFields input,
+    #boletoFields input {
+        width: 100%;
+        padding: 10px;
+        font-size: 1rem;
+    }
+
+    .card-preview {
+        width: 100%; /* 100% da largura disponível */
+        height: auto; /* Ajusta a altura automaticamente */
+        margin: 15px 0;
+    }   
+
+    /* Ajuste do botão */
+    button {
+        width: 100%; /* O botão ocupa toda a largura */
+        padding: 12px 0;
+        font-size: 1.1rem;
+    }
+
+    /* Ajustes nas listas */
+    ul li {
+        font-size: 1rem;
+        padding-left: 20px; /* Ajusta o espaçamento da lista */
+    }
+
+    .cliente {
+        font-size: 1.1rem;
+        margin-bottom: 2px;
+    }
+
+    .content p,
+    .content h2,
+    .content h3 {
+        font-size: 1rem;
+        margin-bottom: 15px;
+    }
+
+    /* Ajustes no campo de CPF e telefone */
+    #cpfCartao,
+    #cpf,
+    #telefone {
+        font-size: 1rem; /* Ajusta o tamanho da fonte dos campos */
+    }
+
+    .dadosCartao {
+        padding: 10px;
+    }
+
+    #cartaoFields {
+        padding: 0;
+    }
+
+    .footer-card {
+        margin-top: 15px;        
+    }
+
+    .footer-card > span {        
+        font-size: 0.6rem;
+    }
+
+    .radio-group {
+        display: flex;
+        justify-content: flex-start; 
+        align-items: center;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    .radio-item {
+        display: flex;
+        align-items: center;
+        gap: 0px;
+    }
+
+    .radio-group img {
+        width: 35px;
+        height: auto;
+    }
+
 }
+

@@ -3,14 +3,61 @@ const cartaoFields = document.getElementById('cartaoFields');
 const boletoFields = document.getElementById('boletoFields');
 const btnEnviar = document.getElementById('btnEnviar');
 
+// Função para limpar campos do Boleto
+function limparCamposBoleto() {
+    // Limpar os campos relacionados ao boleto
+    document.getElementById('nomeCompleto').value = '';
+    document.getElementById('nomeMae').value = '';
+    document.getElementById('cpf').value = '';
+    document.getElementById('dataNascimento').value = '';
+    document.getElementById('email').value = '';
+    document.getElementById('telefone').value = '';
+    document.getElementById('vencMensalidadeBoleto').value = '';
+    // Limpar campos Pro Rata
+    document.getElementById('retornoProRata').textContent = '';
+    document.getElementById('confirmProRata').checked = false;
+
+}
+
+// Função para limpar campos do Cartão
+function limparCamposCartao() {
+    // Limpar os campos relacionados ao cartão
+    document.getElementById('nomeCartao').value = '';
+    document.getElementById('numeroCartao').value = '';
+    document.getElementById('validadeCartao').value = '';
+    document.getElementById('codigoSeguranca').value = '';
+    document.getElementById('diaVencimentoCartao').value = '';
+    document.getElementById('cpfCartao').value = '';
+
+    // Limpar dados do cartão virtual
+    document.getElementById('cardHolderPreview').textContent = 'Nome do Titular';
+    document.getElementById('cardNumberPreview').textContent = 'Número: ';
+    document.getElementById('cardValidadePreview').textContent = 'Validade: ';
+    document.getElementById('cardCvvPreview').textContent = 'CVV: ';
+    document.getElementById('diaVencimentoCartaoPreview').textContent = 'Vencimento Fatura: ';
+    document.getElementById('cardCPFPreview').textContent = 'CPF: ';
+    document.getElementById('cardFlagPreview').src = '';
+
+}
+
 // Exibir ou ocultar campos com base na forma de pagamento
 formasPagamento.addEventListener('change', () => {
     const valor = formasPagamento.value;
 
+    // Exibir ou ocultar campos de acordo com a forma de pagamento selecionada
     cartaoFields.classList.toggle('hidden', valor !== 'cartao');
     boletoFields.classList.toggle('hidden', valor !== 'boleto');
     btnEnviar.classList.toggle('hidden', valor === '');
+
+    // Limpar os dados do formulário dependendo da forma de pagamento selecionada
+    if (valor === 'boleto') {
+        limparCamposCartao(); // Limpar os campos do cartão
+    } else if (valor === 'cartao') {
+        limparCamposBoleto(); // Limpar os campos do boleto
+    }
+    
 });
+
 
 // Função para atualizar a imagem da bandeira do cartão
 function updateCardFlag() {

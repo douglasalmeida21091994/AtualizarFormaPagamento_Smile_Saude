@@ -83,10 +83,10 @@ function updateCardPreview() {
         `CVV: ${document.getElementById('codigoSeguranca').value || '***'}`;
 
     document.getElementById('diaVencimentoCartaoPreview').textContent =
-        `Vencimento Fatura: ${document.getElementById('diaVencimentoCartao').value || 'DD'}`;
+        `Venc. Fatura: ${document.getElementById('diaVencimentoCartao').value}`;
 
     document.getElementById('cardCPFPreview').textContent =
-        `CPF: ${document.getElementById('cpfCartao').value || '000.000.000-00'}`;
+        `CPF: ${document.getElementById('cpfCartao').value}`;
 }
 
 // Função de validação
@@ -217,32 +217,32 @@ function chamarAPI(campoId) {
     let valor = document.getElementById(campoId).value;
     // alert(valor);
     // Exemplo de como enviar para a API, adaptando para o que você precisa
-     const param1 = '0801117.00';
-     const param2 = '5';
- 
-     // Construct the URL with query parameters
-     const apiUrl = `http://ws.smilesaude.com.br/api/forma-pagamento/pro-rata/${param1}/${param2}`;
- 
-     // Make the GET request
-     fetch(apiUrl, {
-         method: 'GET', // Specify the HTTP method
-         headers: {
-             'Content-Type': 'application/json' // Set the header
-         },
-         mode: 'no-cors'
-     })
-     .then(response => {
-         if (!response.ok) {
-             throw new Error('Network response was not ok');
-         }
-         return response.json(); // Parse the response as JSON
-     })
-     .then(data => {
-         console.log('API Response:', data); // Handle the data
-     })
-     .catch(error => {
-         console.error('There was a problem with the fetch operation:', error); // Handle errors
-     });
+    const param1 = '0801117.00';
+    const param2 = '5';
+
+    // Construct the URL with query parameters
+    const apiUrl = `http://ws.smilesaude.com.br/api/forma-pagamento/pro-rata/${param1}/${param2}`;
+
+    // Make the GET request
+    fetch(apiUrl, {
+        method: 'GET', // Specify the HTTP method
+        headers: {
+            'Content-Type': 'application/json' // Set the header
+        },
+        mode: 'no-cors'
+    })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json(); // Parse the response as JSON
+        })
+        .then(data => {
+            console.log('API Response:', data); // Handle the data
+        })
+        .catch(error => {
+            console.error('There was a problem with the fetch operation:', error); // Handle errors
+        });
 }
 
 // Adiciona o evento blur para o campo vencMensalidadeBoleto
@@ -254,5 +254,12 @@ document.getElementById('vencMensalidadeBoleto').addEventListener('blur', functi
 document.getElementById('diaVencimentoCartao').addEventListener('blur', function () {
     chamarAPI('diaVencimentoCartao');
 });
+
+flatpickr("#dataNascimento", {
+    dateFormat: "d/m/Y", // Formato de data (dd/mm/aaaa)
+    maxDate: "today",    // Limita a data máxima ao dia de hoje
+    locale: "pt"         // Idioma em português
+});
+
 
 

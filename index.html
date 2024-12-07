@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
         integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 </head>
 
 <body>
@@ -20,7 +21,7 @@
             <header class="modal-header">
                 <h1>AUTENTICAÇÃO</h1>
                 <!- <a href="javascript:void(0);" class="j_modal_close icon-notext icon-cancel" onclick="closeModal()">×</a> -->
-            <!-- </header>
+    <!-- </header>
 
             <div class="modal-content">
                 <form class="form-validate-html form" action="index.html" method="post" id="form">
@@ -32,7 +33,7 @@
                 </form>
             </div>
         </div> -->
-    <!-- </div> --> 
+    <!-- </div> -->
 
     <!-- CONTEÚDO DA PÁGINA WEB -->
     <header class="title">
@@ -88,6 +89,10 @@
                     <label for="nomeCartao">Nome do Titular do Cartão:</label>
                     <input type="text" id="nomeCartao" oninput="updateCardPreview()" />
 
+                    <label for="cpfCartao">CPF do Titular:</label>
+                    <input type="text" id="cpfCartao" maxlength="14" placeholder="000.000.000-00" inputmode="numeric"
+                        pattern="[0-9]*" oninput="formatCPF(this)" />
+
                     <!-- Botões de seleção das bandeiras -->
 
                     <div class="title-radio">
@@ -96,43 +101,50 @@
 
                     <div class="radio-group">
                         <div class="radio-item">
-                            <input type="radio" id="bandeiraDiners" name="bandeira" value="diners" onclick="updateCardFlag()" />
+                            <input type="radio" id="bandeiraDiners" name="bandeira" value="diners"
+                                onclick="updateCardFlag()" />
                             <label for="bandeiraDiners">Diners</label>
                             <img src="img/diners.png" alt="Cartão Diners" id="diners">
                         </div>
-                    
+
                         <div class="radio-item">
-                            <input type="radio" id="bandeiraElo" name="bandeira" value="elo" onclick="updateCardFlag()" />
+                            <input type="radio" id="bandeiraElo" name="bandeira" value="elo"
+                                onclick="updateCardFlag()" />
                             <label for="bandeiraElo">Elo</label>
                             <img src="img/elo.png" alt="Cartão Elo" id="elo">
                         </div>
-                    
+
                         <div class="radio-item">
-                            <input type="radio" id="bandeiraHiper" name="bandeira" value="hiper" onclick="updateCardFlag()" />
+                            <input type="radio" id="bandeiraHiper" name="bandeira" value="hiper"
+                                onclick="updateCardFlag()" />
                             <label for="bandeiraHiper">Hiper</label>
                             <img src="img/hiper.png" alt="Cartão Hiper">
                         </div>
-                    
+
                         <div class="radio-item">
-                            <input type="radio" id="bandeiraMaster" name="bandeira" value="master" onclick="updateCardFlag()" />
+                            <input type="radio" id="bandeiraMaster" name="bandeira" value="master"
+                                onclick="updateCardFlag()" />
                             <label for="bandeiraMaster">Master</label>
                             <img src="img/master.png" alt="Cartão Master">
                         </div>
-                    
+
                         <div class="radio-item">
-                            <input type="radio" id="bandeiraVisa" name="bandeira" value="visa" onclick="updateCardFlag()" />
+                            <input type="radio" id="bandeiraVisa" name="bandeira" value="visa"
+                                onclick="updateCardFlag()" />
                             <label for="bandeiraVisa">Visa</label>
                             <img src="img/visa.png" alt="Cartão Visa">
                         </div>
                     </div>
-                    
+
                     <!--  -->
 
                     <label for="numeroCartao">Número do Cartão:</label>
-                    <input type="text" id="numeroCartao" maxlength="19" oninput="formatCardNumber()" />
+                    <input type="text" id="numeroCartao" maxlength="19" placeholder="0000 0000 0000 0000"
+                        oninput="formatCardNumber()" />
 
                     <label for="validadeCartao">Validade do Cartão:</label>
-                    <input type="text" id="validadeCartao" maxlength="7" placeholder="00/0000" inputmode="numeric" pattern="[0-9]*" oninput="formatCardValidity(this)" />
+                    <input type="text" id="validadeCartao" maxlength="7" placeholder="00/0000" inputmode="numeric"
+                        pattern="[0-9]*" oninput="formatCardValidity(this)" />
 
                     <label for="codigoSeguranca">Código de Segurança (CVV):</label>
                     <input type="text" id="codigoSeguranca" maxlength="3" placeholder="000" inputmode="numeric"
@@ -142,20 +154,16 @@
                     <input type="text" id="diaVencimentoCartao" placeholder="00" inputmode="numeric" pattern="[0-9]*"
                         maxlength="2" oninput="updateCardPreview()" />
 
-                    <label for="cpfCartao">CPF do Titular:</label>
-                    <input type="text" id="cpfCartao" maxlength="14" placeholder="000.000.000-00" inputmode="numeric"
-                        pattern="[0-9]*" oninput="formatCPF(this)" />
-
                     <!-- DADOS DO CARTÃO INICIAL -->
                     <div class="card">
                         <div class="card-preview">
                             <h4>Cartão Virtual</h4>
                             <p id="cardHolderPreview">Nome do Titular</p>
+                            <p id="cardCPFPreview">CPF: </p>
                             <p id="cardNumberPreview">Número: </p>
                             <p id="cardValidadePreview">Validade: </p>
                             <p id="cardCvvPreview">CVV: </p>
-                            <p id="diaVencimentoCartaoPreview">Vencimento Fatura: </p>
-                            <p id="cardCPFPreview">CPF: </p>
+                            <p id="diaVencimentoCartaoPreview">Venc. Fatura: </p>
 
                             <!-- Imagem da bandeira do cartão -->
                             <img id="cardFlagPreview" src="" class="card-flag-preview" />
@@ -172,7 +180,7 @@
                         </div>
 
                         <div id="dadosCliente">
-                            <label for="novoVenc" >Novo Vencimento:</label>
+                            <label for="novoVenc">Novo Vencimento:</label>
                         </div>
 
                         <div id="dadosCliente">
@@ -182,9 +190,11 @@
                         <div id="dadosCliente">
                             <label for="novoValor">Valor Mensalidade + Pro Rata:</label>
                         </div>
-                        
+
                         <p class="retornoProRata" id="retornoProRata">
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio aliquid cumque veritatis accusamus! Ducimus minus quaerat ratione cum quis voluptate distinctio odio dignissimos impedit. Et asperiores illo sequi quaerat quasi.
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio aliquid cumque veritatis
+                            accusamus! Ducimus minus quaerat ratione cum quis voluptate distinctio odio dignissimos
+                            impedit. Et asperiores illo sequi quaerat quasi.
                         </p>
 
                         <div id="confirm">
@@ -209,18 +219,19 @@
                     <input type="text" id="cpf" placeholder="000.000.000-00" maxlength="14" inputmode="numeric" />
 
                     <label for="dataNascimento">Data de Nascimento:</label>
-                    <input type="date" id="dataNascimento" placeholder="00/00/0000" inputmode="numeric"
-                        pattern="[0-9]*" />
+                    <input type="date" id="dataNascimento" placeholder="00/00/0000" inputmode="numeric" />
 
                     <label for="email">E-mail:</label>
-                    <input type="email" maxlength="35" inputmode="email" id="email" placeholder="seuemail@hotmail.com" />
+                    <input type="email" maxlength="35" inputmode="email" id="email"
+                        placeholder="seuemail@hotmail.com" />
 
                     <label for="telefone">Telefone:</label>
                     <input type="text" id="telefone" placeholder="(00) 0 0000-0000" inputmode="numeric"
                         pattern="[0-9]*" />
 
                     <label for="vencMensalidadeBoleto">Dia de Vencimento da Mensalidade:</label>
-                    <input type="text" maxlength="2" id="vencMensalidadeBoleto" inputmode="numeric" pattern="[0-9]*" />
+                    <input type="text" maxlength="2" id="vencMensalidadeBoleto" placeholder="00" inputmode="numeric"
+                        pattern="[0-9]*" />
 
                     <div class="proRataBoleto">
 
@@ -229,7 +240,7 @@
                         </div>
 
                         <div id="dadosCliente">
-                            <label for="novoVenc" >Novo Vencimento:</label>
+                            <label for="novoVenc">Novo Vencimento:</label>
                         </div>
 
                         <div id="dadosCliente">
@@ -239,9 +250,11 @@
                         <div id="dadosCliente">
                             <label for="novoValor">Valor Mensalidade + Pro Rata:</label>
                         </div>
-                        
+
                         <p class="retornoProRata" id="retornoProRata">
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio aliquid cumque veritatis accusamus! Ducimus minus quaerat ratione cum quis voluptate distinctio odio dignissimos impedit. Et asperiores illo sequi quaerat quasi.
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio aliquid cumque veritatis
+                            accusamus! Ducimus minus quaerat ratione cum quis voluptate distinctio odio dignissimos
+                            impedit. Et asperiores illo sequi quaerat quasi.
                         </p>
 
                         <div id="confirm">
@@ -285,6 +298,7 @@
     </div>
 
     <script src="js/javascript.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 
 </body>
 

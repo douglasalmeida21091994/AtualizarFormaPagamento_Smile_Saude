@@ -475,7 +475,8 @@ button:hover {
 #cpf,
 #dataNascimento,
 #email,
-#telefone {
+#telefone,
+#vencMensalidadeBoleto {
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;

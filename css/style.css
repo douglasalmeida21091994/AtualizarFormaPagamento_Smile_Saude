@@ -532,6 +532,10 @@ button:hover {
     border-top-right-radius: 5px;
 }
 
+.modal-header > h1 {
+    font-size: 1.5rem;
+}
+
 .modal-content {
     padding: 20px;
 }
@@ -731,6 +735,4 @@ button:hover {
     #boletoFields {
         padding: 0;
     }
-
 }
-

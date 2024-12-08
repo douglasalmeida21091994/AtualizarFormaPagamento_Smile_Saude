@@ -55,7 +55,7 @@ formasPagamento.addEventListener('change', () => {
     } else if (valor === 'cartao') {
         limparCamposBoleto(); // Limpar os campos do boleto
     }
-    
+
 });
 
 
@@ -246,16 +246,16 @@ function formatTelefone(input) {
 // }
 
 // Exibe o modal assim que a página carrega  // DESCOMENTAR DEPOIS
-// window.onload = function () {
-//     document.getElementById("modal").style.display = "flex";
-//     document.body.classList.add("modal-open");
-// };
+window.onload = function () {
+    document.getElementById("modal").style.display = "flex";
+    document.body.classList.add("modal-open");
+};
 
-// // Adiciona a funcionalidade de envio do formulário, caso necessário
-// document.getElementById("form").addEventListener("submit", function (event) {
-//     event.preventDefault(); // Impede o envio do formulário para teste
-//     closeModal(); // Fecha o modal ao submeter
-// });
+// Adiciona a funcionalidade de envio do formulário, caso necessário
+document.getElementById("form").addEventListener("submit", function (event) {
+    event.preventDefault(); // Impede o envio do formulário para teste
+    closeModal(); // Fecha o modal ao submeter
+});
 
 // FUNÇÃO CHAMANDO API PARA VERIFICAR SE HÁ ALTERAÇÃO DE VENCIMENTO PARA PRO RATA
 
@@ -307,6 +307,3 @@ flatpickr("#dataNascimento", {
     maxDate: "today",    // Limita a data máxima ao dia de hoje
     locale: "pt"         // Idioma em português
 });
-
-
-

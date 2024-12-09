@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" class="scroll-smooth">
+    <!-- animação para ao clicar suavizar -->
 
 <head>
     <meta charset="UTF-8">
@@ -11,6 +12,7 @@
         integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body>
@@ -64,14 +66,14 @@
             <ol>
                 <li>Selecione a forma de pagamento desejada.</li>
                 <li>Preencha os dados solicitados.</li>
-                <li>Clique em <strong>Realizar Solicitação</strong>.</li>
+                <li>Clique em <strong><a href="#dadosCartao">Realizar Solicitação</a></strong>.</li> <!-- animação para ao clicar ir para minha div id="dadosCartao"-->
             </ol>
             <p>
                 Após o envio, sua solicitação será processada pelo setor responsável no prazo de até 5 dias úteis. Caso
                 tenha dúvidas ou encontre alguma dificuldade, nossa equipe está à disposição para auxiliá-lo.
             </p>
 
-            <div class="dadosCartao">
+            <div class="dadosCartao" id="dadosCartao">
                 <div class="alteracao">
                     <h2>Selecione a Forma de Pagamento</h2>
 

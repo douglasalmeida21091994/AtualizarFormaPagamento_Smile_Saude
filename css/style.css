@@ -492,6 +492,7 @@ button:hover {
     max-width: 250px;
     background-color: #fff;
     color: #4a3fc5c8;
+    border: 1.5px solid #fff;
 }
 
 #btnEnviar:hover {

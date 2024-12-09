@@ -163,6 +163,7 @@ h4 {
 .alteracao {
     text-align: center;
     width: 85%;
+    margin: 20px auto;
 }
 
 .alteracao>h2 {

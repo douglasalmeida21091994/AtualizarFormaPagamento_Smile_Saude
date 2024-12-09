@@ -126,6 +126,13 @@ h4 {
     color: rgb(74, 63, 197);
 }
 
+.content ul > li > a:hover,
+#telefone_lis:hover {
+    text-decoration: none;
+    color: #3b82f6;
+    text-decoration: underline;
+}
+
 
 .dadosCartao {
     margin: 15px 0;

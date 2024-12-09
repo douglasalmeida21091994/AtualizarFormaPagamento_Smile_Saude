@@ -488,6 +488,7 @@ button:hover {
 }
 
 #btnEnviar {
+    padding: 10px;
     margin-bottom: 5px;
     max-width: 250px;
     background-color: #fff;

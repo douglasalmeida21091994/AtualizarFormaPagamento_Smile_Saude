@@ -21,6 +21,10 @@
     transition: all 0.3s ease;
 }
 
+.title > h2 {
+    font-size: 1.4rem;
+}
+
 .title-image {
     position: absolute;
     left: 20px;
@@ -48,7 +52,7 @@
 
 
 .cliente {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     color: #333333f1;
     display: block;
     margin-bottom: 10px;

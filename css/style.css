@@ -640,9 +640,10 @@ button:hover {
     .title > h2 {
         font-size: 1.1rem;
     }
+   
     
     .title-image {        
-        left: 0;
+        left: 0;        
         width: 50px;
         display: none;
     }

@@ -235,6 +235,22 @@ h4 {
     border: none;
 }
 
+.informaBoleto {
+    /* border: 1px solid #f1f1f14d; */
+    border-radius: 5px;
+    padding: 5px;
+    background-color: #fed7aa;
+}
+
+.informaBoleto > p {
+    color: #b45309;
+}
+
+.informB:hover {
+    text-decoration: underline;
+    
+}
+
 .radio-group {
     display: flex;
     justify-content: flex-start; 

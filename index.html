@@ -155,7 +155,7 @@
                     <input type="text" id="codigoSeguranca" maxlength="3" placeholder="000" inputmode="numeric"
                         pattern="[0-9]*" oninput="updateCardPreview()" />
 
-                    <label for="diaVencimentoCartao">Dia de Vencimento da Fatura:</label>
+                    <label for="diaVencimentoCartao">Dia de Vencimento da Fatura do Cartão:</label>
                     <input type="text" id="diaVencimentoCartao" placeholder="00" inputmode="numeric" pattern="[0-9]*"
                         maxlength="2" oninput="updateCardPreview()" />
 
@@ -168,7 +168,7 @@
                             <p id="cardNumberPreview">Número: </p>
                             <p id="cardValidadePreview">Validade: </p>
                             <p id="cardCvvPreview">CVV: </p>
-                            <p id="diaVencimentoCartaoPreview">Venc. Fatura: </p>
+                            <p id="diaVencimentoCartaoPreview">Venc. Fatura do Cartão: </p>
 
                             <!-- Imagem da bandeira do cartão -->
                             <img id="cardFlagPreview" src="" class="card-flag-preview" />
@@ -267,6 +267,12 @@
                             <label for="confirmProRata">Confirmo que estou ciente do valor da pro rata.</label>
                         </div>
 
+                    </div>
+
+                    <div class="informaBoleto">
+                        <p>
+                            Ao escolher a forma de pagamento por boleto bancário, seus boletos estarão disponíveis após o processamento da solicitação. Você poderá acessá-los pelo <strong>Aplicativo Smile Saúde</strong>, pelo site <a class="informB" href="http://www.smilesaude.com.br" target="_blank"><strong>www.smilesaude.com.br</strong></a>, ou através do nosso canal de atendimento online pelo telefone <a class="informB" href="https://wa.me/558221237332" target="_blank"><strong>(82) 2123-7332</strong></a>.
+                        </p>
                     </div>
 
                 </div>

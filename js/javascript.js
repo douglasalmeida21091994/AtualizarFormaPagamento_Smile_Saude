@@ -130,7 +130,7 @@ function updateCardPreview() {
         `CVV: ${document.getElementById('codigoSeguranca').value || '***'}`;
 
     document.getElementById('diaVencimentoCartaoPreview').textContent =
-        `Venc. Fatura: ${document.getElementById('diaVencimentoCartao').value}`;
+        `Venc. Fatura do Cartão: ${document.getElementById('diaVencimentoCartao').value}`;
 
     document.getElementById('cardCPFPreview').textContent =
         `CPF: ${document.getElementById('cpfCartao').value}`;
